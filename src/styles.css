@@ -1,0 +1,113 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — FluxoPro
+ * Paleta: carvão e verde petróleo, tipografia Sora (títulos) + Manrope (texto).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Manrope", ui-sans-serif, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --shadow-card: 0 16px 50px -28px oklch(0 0 0 / 0.8);
+  --shadow-lift: 0 24px 70px -32px oklch(0.65 0.14 175 / 0.38);
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(0.145 0.008 175);
+  --foreground: oklch(0.96 0.01 165);
+  --card: oklch(0.205 0.012 175 / 0.88);
+  --card-foreground: oklch(0.96 0.01 165);
+  --popover: oklch(0.19 0.012 175);
+  --popover-foreground: oklch(0.96 0.01 165);
+  --primary: oklch(0.55 0.105 175);
+  --primary-foreground: oklch(0.98 0.006 165);
+  --primary-soft: oklch(0.29 0.055 175 / 0.78);
+  --secondary: oklch(0.245 0.012 175);
+  --secondary-foreground: oklch(0.88 0.012 165);
+  --muted: oklch(0.235 0.01 175);
+  --muted-foreground: oklch(0.69 0.018 170);
+  --accent: oklch(0.285 0.035 175);
+  --accent-foreground: oklch(0.96 0.01 165);
+  --destructive: oklch(0.7 0.15 25);
+  --destructive-foreground: oklch(0.98 0.005 25);
+  --success: oklch(0.78 0.16 158);
+  --success-soft: oklch(0.28 0.06 158 / 0.75);
+  --danger: oklch(0.74 0.13 22);
+  --danger-soft: oklch(0.28 0.055 22 / 0.75);
+  --border: oklch(1 0 0 / 0.1);
+  --input: oklch(1 0 0 / 0.13);
+  --ring: oklch(0.67 0.13 175);
+  --chart-category-1: oklch(0.72 0.14 250);
+  --chart-category-2: oklch(0.8 0.15 75);
+  --chart-category-3: oklch(0.69 0.17 300);
+  --chart-category-4: oklch(0.8 0.11 215);
+  --chart-category-5: oklch(0.82 0.1 285);
+  --chart-category-6: oklch(0.9 0.16 100);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    min-width: 320px;
+  }
+}
+
+/* Keep the browser's single, clickable calendar indicator on every date field. */
+input.native-date::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
