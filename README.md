@@ -46,38 +46,35 @@ O banco de dados utiliza políticas de **Row Level Security (RLS)** no Supabase.
 ### Passo a Passo
 
 1. **Clone o repositório:**
-
    ```bash
-   git clone [https://github.com/seu-usuario/fluxopro.git](https://github.com/seu-usuario/fluxopro.git)
+   git clone https://github.com/seu-usuario/fluxopro.git
    cd fluxopro
+   ```
 
-   Instale as dependências:
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   # ou usando bun:
+   # bun install
+   ```
 
-Bash
-npm install
+3. **Configure as Variáveis de Ambiente:**
+   Crie um arquivo `.env` na raiz do projeto baseado no `.env.example`:
+   ```env
+   VITE_SUPABASE_URL=sua_url_do_supabase
+   VITE_SUPABASE_ANON_KEY=sua_chave_anonima_do_supabase
+   ```
 
-# ou usando bun
+4. **Execute o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   # ou usando bun:
+   # bun dev
+   ```
+   Abra o navegador no endereço indicado (geralmente http://localhost:5173).
 
-# bun install
+---
 
-Configure as Variáveis de Ambiente:
+## 📄 Licença
 
-Crie um arquivo .env na raiz do projeto baseado no .env.example:
-
-Snippet de código
-VITE_SUPABASE_URL=sua_url_do_supabase
-VITE_SUPABASE_ANON_KEY=sua_chave_anonima_do_supabase
-
-Execute o servidor de desenvolvimento:
-
-Bash
-npm run dev
-
-# ou usando bun
-
-# bun dev
-
-Abra o navegador no endereço indicado (geralmente <http://localhost:5173>).
-
-📄 Licença
 Este projeto foi desenvolvido para fins de aprendizado e portfólio. Sinta-se à vontade para explorar e contribuir!
